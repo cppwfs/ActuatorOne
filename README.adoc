@@ -1,0 +1,50 @@
+= Actuator One Sample application
+
+This is a sample hello world app that allows you to play with the actuator settings
+
+== Requirements:
+
+* Java 17 or Above
+
+== Classes:
+
+* ActoneApplication - the Spring Boot Main Application
+* HelloWorldController - will display `Hello World` if you access the `http://localhost/hello` endpoint.
+** `http://localhost:8080/actuator/health` for health check
+** `http://localhost:8080/actuator/metrics` for metrics (if enabled)
+
+== Build:
+
+[source,shell]
+----
+./mvnw clean package
+----
+
+=== Run:
+
+[source,shell]
+----
+java -jar target/actone-0.0.1-SNAPSHOT.jar
+----
+
+== Docker Build:
+
+This may take a few minutes for the first docker build.
+[source,shell]
+----
+./mvnw spring-boot:build-image
+----
+
+=== Docker Run:
+
+[source,shell]
+----
+docker run -p 8080:8080 actone:0.0.1-SNAPSHOT
+----
+
+== SDKMan Java installation:
+
+[source,shell]
+----
+sdk install java 17.0.12-librca
+----
